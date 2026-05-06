@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato · Breno Bernstein</title>
+  <meta name="description" content="A forma mais rápida de falar comigo é via LinkedIn ou email. Para conversas estruturadas, Calendly."/>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+</head>
+<body>
+
+<canvas id="neural-canvas"></canvas>
+<div class="cursor-glow"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">BB</a>
+    <ul class="nav-links">
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="cases/index.html">Cases</a></li>
+      <li><a href="insights/index.html">Insights</a></li>
+      <li><a href="contato.html" class="active">Contato</a></li>
+      <li><a href="contato.html" class="nav-cta">Agendar conversa</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <button class="close-btn">✕</button>
+  <a href="sobre.html">Sobre</a>
+  <a href="cases/index.html">Cases</a>
+  <a href="insights/index.html">Insights</a>
+  <a href="contato.html">Contato</a>
+  <a href="contato.html" class="btn btn-primary btn-sm">Agendar conversa</a>
+</div>
+
+<div class="page-header">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="section-label fade-up">Vamos conversar</div>
+    <h1 class="fade-up"><span class="gradient-text">Sem formulário longo.</span><br/>Direto ao ponto.</h1>
+    <p class="fade-up">A forma mais rápida é o Calendly — 30min, sem compromisso. Se preferir texto, email ou LinkedIn funcionam bem.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:0;position:relative;z-index:2;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;" class="contato-grid">
+
+      <!-- Left: Links de contato -->
+      <div class="fade-up">
+        <div class="section-label" style="margin-bottom:24px;">Canais diretos</div>
+
+        <!-- Calendly -->
+        <a href="#" class="contact-link" onclick="alert('Configure aqui seu link do Calendly');return false;">
+          <div class="contact-link-icon violet">📅</div>
+          <div class="contact-link-text">
+            <strong>Agendar 30min no Calendly</strong>
+            <span>O caminho mais rápido para uma conversa real</span>
+          </div>
+          <svg style="margin-left:auto;color:var(--faint);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/brenobernstein" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon cyan">💼</div>
+          <div class="contact-link-text">
+            <strong>LinkedIn</strong>
+            <span>linkedin.com/in/brenobernstein</span>
+          </div>
+          <svg style="margin-left:auto;color:var(--faint);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:breno@brenobernstein.com" class="contact-link">
+          <div class="contact-link-icon green">✉️</div>
+          <div class="contact-link-text">
+            <strong>Email</strong>
+            <span>breno@brenobernstein.com</span>
+          </div>
+          <svg style="margin-left:auto;color:var(--faint);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Resposta -->
+        <div class="card" style="margin-top:24px;background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.15);">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 8px rgba(16,185,129,0.5);flex-shrink:0;"></span>
+            <p style="font-size:0.875rem;color:var(--muted);margin:0;">
+              Respondo em até <strong style="color:var(--text);">48h úteis</strong>. Para urgências, LinkedIn é o canal mais rápido.
+            </p>
+          </div>
+        </div>
+
+        <!-- Contexto -->
+        <div style="margin-top:40px;">
+          <div class="section-label" style="margin-bottom:16px;">Sobre o que converso bem</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:var(--primary-l);font-size:1rem;flex-shrink:0;">→</span>
+              <span style="font-size:0.875rem;color:var(--muted);">Posições em <strong style="color:var(--text);">IA PM</strong>, Coordenação de Infra ou Prompt Engineering</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:var(--primary-l);font-size:1rem;flex-shrink:0;">→</span>
+              <span style="font-size:0.875rem;color:var(--muted);">Projetos onde <strong style="color:var(--text);">decisão técnica e estratégia de produto</strong> se intersectam</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:var(--primary-l);font-size:1rem;flex-shrink:0;">→</span>
+              <span style="font-size:0.875rem;color:var(--muted);">Organizações que usam <strong style="color:var(--text);">IA de verdade</strong> — não como feature de marketing</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="color:var(--primary-l);font-size:1rem;flex-shrink:0;">→</span>
+              <span style="font-size:0.875rem;color:var(--muted);">Troca com <strong style="color:var(--text);">peers</strong> em transição ou já em PM de produto de IA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Formulário -->
+      <div class="fade-up">
+        <div class="section-label" style="margin-bottom:24px;">Formulário de contato</div>
+        <div class="card" style="padding:32px;">
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required/>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required/>
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa <span style="color:var(--faint);font-weight:400;">(opcional)</span></label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa"/>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Me conte sobre a posição, o projeto ou o que você quer conversar..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Enviar mensagem
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+          <div id="form-success" style="display:none;text-align:center;padding:24px 0;">
+            <div style="font-size:2.5rem;margin-bottom:12px;">✅</div>
+            <p style="font-weight:700;font-size:1.05rem;margin-bottom:8px;">Mensagem enviada!</p>
+            <p style="color:var(--muted);font-size:0.875rem;">Respondo em até 48h úteis. Se for urgente, me manda no LinkedIn.</p>
+          </div>
+        </div>
+        <p style="text-align:center;font-size:0.8rem;color:var(--faint);margin-top:12px;">
+          Seus dados não são armazenados além do necessário para responder.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">Breno Bernstein</a>
+      <ul class="footer-links">
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="cases/index.html">Cases</a></li>
+        <li><a href="insights/index.html">Insights</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 · Itajaí, SC</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+@media(max-width:768px){
+  .contato-grid{grid-template-columns:1fr!important;}
+}
+</style>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  // Aqui conectar ao Formspree: action="https://formspree.io/f/SEU_ID"
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+<script src="assets/js/neural.js"></script>
+<script src="assets/js/main.js"></script>
+<script>new NeuralNetwork('neural-canvas');</script>
+</body>
+</html>

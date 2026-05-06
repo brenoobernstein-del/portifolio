@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frete Mínimo — Produto Interno · Breno Bernstein</title>
+  <meta name="description" content="O dashboard que mudou como a equipe comercial discute frete mínimo — coordenação de produto de ponta a ponta."/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+</head>
+<body>
+
+<canvas id="neural-canvas"></canvas>
+<div class="cursor-glow"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">BB</a>
+    <ul class="nav-links">
+      <li><a href="../sobre.html">Sobre</a></li>
+      <li><a href="index.html" class="active">Cases</a></li>
+      <li><a href="../insights/index.html">Insights</a></li>
+      <li><a href="../contato.html">Contato</a></li>
+      <li><a href="../contato.html" class="nav-cta">Agendar conversa</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <button class="close-btn">✕</button>
+  <a href="../sobre.html">Sobre</a>
+  <a href="index.html">Cases</a>
+  <a href="../insights/index.html">Insights</a>
+  <a href="../contato.html">Contato</a>
+  <a href="../contato.html" class="btn btn-primary btn-sm">Agendar conversa</a>
+</div>
+
+<div class="case-hero">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div style="margin-bottom:12px;">
+      <a href="index.html" style="color:var(--faint);font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='var(--primary-l)'" onmouseout="this.style.color='var(--faint)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Voltar para Cases
+      </a>
+    </div>
+    <div class="case-hero-meta fade-up">
+      <span class="card-tag cyan" style="margin:0;">Produto · Comercial</span>
+      <span class="card-tag" style="margin:0;">Dashboard</span>
+      <span class="card-tag amber" style="margin:0;">4–6 min de leitura</span>
+    </div>
+    <h1 class="fade-up">Frete Mínimo —<br/><span class="gradient-text">Produto Interno</span></h1>
+    <p class="case-hero-hook fade-up">O dashboard que transformou como a equipe comercial discute e decide sobre frete mínimo — de uma reunião semanal de 2h com planilhas para uma conversa de 20min baseada em dados.</p>
+    <div class="case-metrics-row fade-up">
+      <div class="case-metric"><div class="value">100%</div><div class="label">Adoção pelo time comercial</div></div>
+      <div class="case-metric"><div class="value">−70%</div><div class="label">Tempo em reuniões de frete</div></div>
+      <div class="case-metric"><div class="value">PM ponta a ponta</div><div class="label">Discovery → Rollout</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+  <div class="container">
+    <div class="case-content">
+      <article class="case-article fade-up">
+
+        <h2><span class="h2-tag">S · Situação</span> O contexto</h2>
+        <p>A equipe comercial da Conlog realizava, toda segunda-feira, uma reunião de alinhamento sobre frete mínimo por cliente e rota. A duração média era de 2 horas. A dinâmica era sempre a mesma: alguém abria uma planilha de 3 abas, outra pessoa discordava dos números, uma terceira puxava uma versão diferente do mesmo arquivo, e a reunião terminava com mais perguntas do que respostas.</p>
+        <p>O problema não era falta de dados. Era que os dados existiam em 4 fontes diferentes, ninguém sabia qual era a versão verdadeira, e nenhum dos envolvidos tinha tempo de cruzar tudo antes da reunião.</p>
+
+        <h2><span class="h2-tag">C · Complicação</span> Por que era difícil</h2>
+        <p>Três fatores tornavam isso mais complexo do que "montar um dashboard":</p>
+        <ul>
+          <li><strong>Fontes de verdade disputadas:</strong> o time de logística usava uma versão dos dados, o comercial usava outra, e a TI tinha uma terceira no ERP. Escolher uma fonte criaria resistência política.</li>
+          <li><strong>Sem dono de produto:</strong> ninguém tinha ownership formal de resolver esse problema. Eu assumi de facto sem ter o título — e precisava navegar isso sem criar atritos desnecessários.</li>
+          <li><strong>Usuários com pouca familiaridade com ferramentas de BI:</strong> uma solução tecnicamente sofisticada seria subutilizada. O produto precisava ser tão simples que parecia óbvio.</li>
+        </ul>
+
+        <h2><span class="h2-tag">Q · Questão</span> A pergunta central</h2>
+        <div class="highlight-box">
+          <p>"Como criar um único ponto de verdade para dados de frete mínimo que seja confiável o suficiente para substituir quatro fontes disputadas, simples o suficiente para ser usado por pessoas sem background técnico, e rápido o suficiente para tornar a reunião de segunda de 2h em 20min?"</p>
+        </div>
+
+        <h2><span class="h2-tag">A · Abordagem</span> O método aplicado</h2>
+        <p><strong>Discovery (semana 1–2):</strong> Realizei 5 entrevistas individuais de 30min com usuários do processo — 2 do comercial, 1 de logística, 1 de faturamento, 1 de TI. O objetivo não era coletar requisitos, mas entender o job-to-be-done: "o que você precisa saber sobre frete mínimo para tomar sua próxima decisão?"</p>
+        <p>A descoberta mais importante: o time comercial não precisava de todos os dados — precisava de uma resposta para três perguntas específicas antes de cada reunião.</p>
+        <p><strong>Priorização (semana 3):</strong> Mapeei os 3 jobs críticos vs. complexidade de implementação. Decidi começar pelo menor — que resolvia 70% da dor com 20% do esforço.</p>
+        <p><strong>Build (semana 4–6):</strong> Dashboard construído em HTML/CSS com dados consumidos diretamente do ERP via query SQL. Sem middleware, sem nova ferramenta, sem treinamento necessário. Uma URL. Um browser. Pronto.</p>
+        <p><strong>Rollout (semana 7):</strong> Piloto com 2 usuários antes da reunião de segunda. Feedback incorporado em 48h. Deploy para o time completo na semana seguinte.</p>
+
+        <h2><span class="h2-tag">R · Resultado</span> O que aconteceu</h2>
+        <p>A reunião de segunda passou de 2h para 25min em média. O dashboard foi adotado 100% pelo time comercial sem nenhuma comunicação formal de obrigatoriedade. Um dos gerentes começou a enviar o link para clientes antes de calls — uso que eu não havia previsto no design original.</p>
+        <p>Três meses depois, o template foi usado como base para dois outros dashboards do time de logística.</p>
+
+        <h2><span class="h2-tag">↩</span> Aprendizados</h2>
+        <ul>
+          <li>O problema de dados raramente é falta de dados. Quase sempre é falta de uma única fonte confiável com ownership claro.</li>
+          <li>Adoção zero-treinamento é um critério de design, não um bônus. Se precisa de manual, voltei ao teclado.</li>
+          <li>Assumir ownership sem título funciona enquanto você entrega. A credibilidade comprada por entrega é mais durável do que a concedida por organograma.</li>
+          <li>Se refizesse: teria documentado o processo de discovery mais formalmente. Perdemos contexto quando o time rotacionou 6 meses depois.</li>
+        </ul>
+
+        <div class="card" style="margin-top:40px;background:linear-gradient(135deg,rgba(34,211,238,0.07),rgba(139,92,246,0.05));border-color:rgba(34,211,238,0.2);text-align:center;padding:36px;">
+          <p style="font-size:1rem;color:var(--text);font-weight:600;margin-bottom:16px;">Quer conversar sobre produto interno?</p>
+          <a href="../contato.html" class="btn btn-primary">Agendar 30min</a>
+        </div>
+      </article>
+
+      <aside class="case-sidebar fade-up">
+        <div class="sidebar-card">
+          <h4>Sobre este case</h4>
+          <p>Dados apresentados como métricas relativas. Números absolutos disponíveis em conversa privada.</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Músculo demonstrado</h4>
+          <p>Coordenação de produto · Discovery · Sensibilidade de usuário · Rollout interno sem autoridade formal</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Ferramentas usadas</h4>
+          <p>Entrevistas JTBD · SQL direto no ERP · Dashboard HTML/CSS · Piloto controlado</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="fornecedores.html" class="btn btn-ghost btn-sm">Próximo case →</a>
+          <a href="datacenter-conlog.html" class="btn btn-ghost btn-sm">← Case anterior</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="footer-logo">Breno Bernstein</a>
+      <ul class="footer-links">
+        <li><a href="../sobre.html">Sobre</a></li>
+        <li><a href="index.html">Cases</a></li>
+        <li><a href="../insights/index.html">Insights</a></li>
+        <li><a href="../contato.html">Contato</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 · Itajaí, SC</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/neural.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>new NeuralNetwork('neural-canvas');</script>
+</body>
+</html>

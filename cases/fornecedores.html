@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fornecedores — Framework de Avaliação · Breno Bernstein</title>
+  <meta name="description" content="Como avaliar 12 fornecedores em 8 dimensões sem perder a noite no Excel — framework replicável de decisão."/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+</head>
+<body>
+
+<canvas id="neural-canvas"></canvas>
+<div class="cursor-glow"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">BB</a>
+    <ul class="nav-links">
+      <li><a href="../sobre.html">Sobre</a></li>
+      <li><a href="index.html" class="active">Cases</a></li>
+      <li><a href="../insights/index.html">Insights</a></li>
+      <li><a href="../contato.html">Contato</a></li>
+      <li><a href="../contato.html" class="nav-cta">Agendar conversa</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <button class="close-btn">✕</button>
+  <a href="../sobre.html">Sobre</a>
+  <a href="index.html">Cases</a>
+  <a href="../insights/index.html">Insights</a>
+  <a href="../contato.html">Contato</a>
+  <a href="../contato.html" class="btn btn-primary btn-sm">Agendar conversa</a>
+</div>
+
+<div class="case-hero">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div style="margin-bottom:12px;">
+      <a href="index.html" style="color:var(--faint);font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='var(--primary-l)'" onmouseout="this.style.color='var(--faint)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Voltar para Cases
+      </a>
+    </div>
+    <div class="case-hero-meta fade-up">
+      <span class="card-tag green" style="margin:0;">Governança · Dados</span>
+      <span class="card-tag" style="margin:0;">Framework</span>
+      <span class="card-tag amber" style="margin:0;">3–5 min de leitura</span>
+    </div>
+    <h1 class="fade-up">Fornecedores —<br/><span class="gradient-text">Framework de Avaliação</span></h1>
+    <p class="case-hero-hook fade-up">Como estruturei a avaliação de 12 fornecedores em 8 dimensões — transformando um processo ad hoc e político em uma decisão documentada, defensável e replicável.</p>
+    <div class="case-metrics-row fade-up">
+      <div class="case-metric"><div class="value">12</div><div class="label">Fornecedores avaliados</div></div>
+      <div class="case-metric"><div class="value">8 dim.</div><div class="label">Critérios estruturados</div></div>
+      <div class="case-metric"><div class="value">1 framework</div><div class="label">Replicável internamente</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+  <div class="container">
+    <div class="case-content">
+      <article class="case-article fade-up">
+
+        <h2><span class="h2-tag">S · Situação</span> O contexto</h2>
+        <p>A Conlog SA precisava renovar contratos com fornecedores de software e serviços de TI — 12 fornecedores com escopo, modelo de preço e maturidade completamente diferentes. O processo anterior era simples: o gerente mais sênior escolhia com base em relacionamento e preço. Resultado: dois contratos renováveis que geraram problemas operacionais significativos no primeiro ano.</p>
+        <p>Fui solicitado a estruturar um processo de avaliação que fosse rigoroso, documentado e defensável perante a diretoria — sem prolongar o prazo de decisão em mais de 3 semanas.</p>
+
+        <h2><span class="h2-tag">C · Complicação</span> Por que era difícil</h2>
+        <ul>
+          <li><strong>Critérios implícitos conflitantes:</strong> cada stakeholder tinha uma hierarquia diferente de prioridades, nenhuma declarada explicitamente.</li>
+          <li><strong>Dados heterogêneos dos fornecedores:</strong> propostas em formatos incomparáveis, SLAs com definições diferentes de "disponibilidade", preços com escopos distintos.</li>
+          <li><strong>Risco político:</strong> dois dos 12 fornecedores tinham relacionamento histórico com membros da diretoria. O framework precisava ser suficientemente objetivo para tornar o resultado defensável sem ser percebido como ataque a esses relacionamentos.</li>
+        </ul>
+
+        <h2><span class="h2-tag">Q · Questão</span> A pergunta central</h2>
+        <div class="highlight-box">
+          <p>"Como criar um processo de seleção de fornecedores que seja transparente o suficiente para ser aceito por todos os stakeholders, rigoroso o suficiente para evitar a repetição dos erros anteriores, e rápido o suficiente para não comprometer o prazo de renovação contratual?"</p>
+        </div>
+
+        <h2><span class="h2-tag">A · Abordagem</span> O método aplicado</h2>
+        <p><strong>Etapa 1 — Alinhamento de critérios (2 dias):</strong> Workshop de 90min com os 4 stakeholders principais para elicitar e priorizar critérios. Usei votação por pontos (dot voting) para forçar priorização — sem votação, todos os critérios viram "importantes".</p>
+        <p>As 8 dimensões resultantes, em ordem de peso:</p>
+        <ul>
+          <li><strong>Confiabilidade operacional</strong> (peso 25%) — SLA, histórico de incidentes, RTO/RPO</li>
+          <li><strong>TCO 3 anos</strong> (peso 20%) — todos os custos normalizados para escopo comparável</li>
+          <li><strong>Suporte e SLA de atendimento</strong> (peso 15%) — tempo de resposta, canais, nível de escalação</li>
+          <li><strong>Maturidade do produto/serviço</strong> (peso 12%) — roadmap, versão, frequência de updates</li>
+          <li><strong>Integração com stack atual</strong> (peso 10%) — APIs, conectores, esforço de implementação</li>
+          <li><strong>Conformidade e segurança</strong> (peso 8%) — LGPD, certificações, política de dados</li>
+          <li><strong>Relacionamento e suporte comercial</strong> (peso 6%) — histórico, flexibilidade contratual</li>
+          <li><strong>Risco de lock-in</strong> (peso 4%) — portabilidade, custo de saída</li>
+        </ul>
+        <p><strong>Etapa 2 — Coleta padronizada (1 semana):</strong> Template único enviado para todos os 12 fornecedores com perguntas objetivas. Fornecedores que não responderam o template completo foram desclassificados automaticamente — regra declarada antes do envio.</p>
+        <p><strong>Etapa 3 — Scoring e dashboard (2 dias):</strong> Pontuação de 1–5 para cada dimensão, com evidência documentada para cada nota. Dashboard visual mostrando ranking geral e por dimensão — possibilitando análise de sensibilidade ("e se a gente mudar o peso do TCO?").</p>
+
+        <h2><span class="h2-tag">R · Resultado</span> O que aconteceu</h2>
+        <p>A decisão final foi tomada em reunião de 45min — contra as habituais 3 reuniões de 2h do processo anterior. O resultado foi aceito sem questionamentos formais, incluindo pelos stakeholders cujos fornecedores preferidos não foram selecionados.</p>
+        <p>O framework foi adotado pela área de compras como template para avaliações futuras. Dois meses após a implementação, foi adaptado para avaliação de fornecedores de uma área não-TI da empresa.</p>
+
+        <h2><span class="h2-tag">↩</span> Aprendizados</h2>
+        <ul>
+          <li>O valor de um framework de decisão não está no framework: está no processo de construção coletiva dos critérios. Quem participou da definição do peso aceita o resultado.</li>
+          <li>Análise de sensibilidade transforma um resultado em uma conversa. "Se você muda o peso do TCO, o ranking muda assim" é mais persuasivo do que "a escolha certa é X".</li>
+          <li>Transparência sobre o processo desarma resistência política. Não porque as pessoas ficam felizes com o resultado — mas porque o custo de contestar uma decisão documentada é maior do que aceitar.</li>
+          <li>Se refizesse: incluiria verificação de referências com clientes atuais de cada fornecedor. Autodeclaração de SLA tem pouca correlação com SLA real.</li>
+        </ul>
+
+        <div class="card" style="margin-top:40px;background:linear-gradient(135deg,rgba(16,185,129,0.07),rgba(139,92,246,0.05));border-color:rgba(16,185,129,0.2);text-align:center;padding:36px;">
+          <p style="font-size:1rem;color:var(--text);font-weight:600;margin-bottom:16px;">Quer adaptar esse framework ao seu contexto?</p>
+          <a href="../contato.html" class="btn btn-primary">Agendar 30min</a>
+        </div>
+      </article>
+
+      <aside class="case-sidebar fade-up">
+        <div class="sidebar-card">
+          <h4>Sobre este case</h4>
+          <p>Fornecedores e valores anonimizados. Framework completo com pesos reais disponível em conversa privada.</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Músculo demonstrado</h4>
+          <p>Framework de avaliação · Governança de decisão · Navegação política · Análise multicritério</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Ferramentas usadas</h4>
+          <p>Dot voting · Scoring ponderado · Dashboard HTML/CSS · Análise de sensibilidade</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="frete-minimo.html" class="btn btn-ghost btn-sm">← Case anterior</a>
+          <a href="index.html" class="btn btn-ghost btn-sm">← Todos os cases</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="footer-logo">Breno Bernstein</a>
+      <ul class="footer-links">
+        <li><a href="../sobre.html">Sobre</a></li>
+        <li><a href="index.html">Cases</a></li>
+        <li><a href="../insights/index.html">Insights</a></li>
+        <li><a href="../contato.html">Contato</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 · Itajaí, SC</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/neural.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>new NeuralNetwork('neural-canvas');</script>
+</body>
+</html>

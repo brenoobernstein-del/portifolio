@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insights · Breno Bernstein</title>
+  <meta name="description" content="Pensamento aplicado sobre IA Product Management, infraestrutura, decisão e prompt engineering."/>
+  <link rel="stylesheet" href="../assets/css/main.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+</head>
+<body>
+
+<canvas id="neural-canvas"></canvas>
+<div class="cursor-glow"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">BB</a>
+    <ul class="nav-links">
+      <li><a href="../sobre.html">Sobre</a></li>
+      <li><a href="../cases/index.html">Cases</a></li>
+      <li><a href="index.html" class="active">Insights</a></li>
+      <li><a href="../contato.html">Contato</a></li>
+      <li><a href="../contato.html" class="nav-cta">Agendar conversa</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <button class="close-btn">✕</button>
+  <a href="../sobre.html">Sobre</a>
+  <a href="../cases/index.html">Cases</a>
+  <a href="index.html">Insights</a>
+  <a href="../contato.html">Contato</a>
+  <a href="../contato.html" class="btn btn-primary btn-sm">Agendar conversa</a>
+</div>
+
+<div class="page-header">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="section-label fade-up">Pensamento aplicado</div>
+    <h1 class="fade-up">Insights sobre<br/><span class="gradient-text">IA, produto & decisão</span></h1>
+    <p class="fade-up">Não são tutoriais. São teses que defendo com argumento — sobre como IA PM, infraestrutura e decisão se intersectam na prática.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:0;position:relative;z-index:2;">
+  <div class="container">
+
+    <!-- Tags filter -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;" class="fade-up">
+      <button class="skill-tag" style="cursor:pointer;border:none;background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3);color:var(--primary-l);">Todos</button>
+      <button class="skill-tag" style="cursor:pointer;border:none;">IA PM</button>
+      <button class="skill-tag" style="cursor:pointer;border:none;">Decisão</button>
+      <button class="skill-tag" style="cursor:pointer;border:none;">Prompt Eng.</button>
+      <button class="skill-tag" style="cursor:pointer;border:none;">Infraestrutura</button>
+    </div>
+
+    <!-- Grid de artigos -->
+    <div class="grid-2" style="gap:20px;">
+
+      <!-- Artigo 1 -->
+      <a href="#decisoes-ti" id="decisoes-ti" class="insight-card fade-up">
+        <div class="insight-card-meta">
+          <span class="card-tag" style="margin:0;">Decisão · Infra</span>
+          <span>Abr 2026</span>
+          <span>5 min</span>
+        </div>
+        <h3>Por que decisões de TI de R$ 100k+ não devem ser tomadas por preço</h3>
+        <p>Critério de mais baixo TCO ignora risco, lock-in e prazo. Senior frameworks consideram 8 dimensões — e nenhuma delas é só número.</p>
+      </a>
+
+      <!-- Artigo 2 -->
+      <a href="#scqa" id="scqa" class="insight-card fade-up">
+        <div class="insight-card-meta">
+          <span class="card-tag cyan" style="margin:0;">Comunicação exec.</span>
+          <span>Mar 2026</span>
+          <span>4 min</span>
+        </div>
+        <h3>Como aplico SCQA em apresentações executivas (com exemplo real)</h3>
+        <p>Pyramid Principle adaptado ao board brasileiro. Um antes e depois de uma apresentação real que foi da confusão para aprovação em uma reunião.</p>
+      </a>
+
+      <!-- Artigo 3 -->
+      <a href="#ti-pm" id="ti-pm" class="insight-card fade-up">
+        <div class="insight-card-meta">
+          <span class="card-tag amber" style="margin:0;">IA PM · Infra</span>
+          <span>Mar 2026</span>
+          <span>5 min</span>
+        </div>
+        <h3>O que TI tradicional ensina que IA Product Managers precisam aprender</h3>
+        <p>Disponibilidade, segurança e governança não são "TI legacy" — são pré-requisitos de produtos sérios. Quem vem só de produto subestima isso.</p>
+      </a>
+
+      <!-- Artigo 4 -->
+      <a href="#prompt-eng" id="prompt-eng" class="insight-card fade-up">
+        <div class="insight-card-meta">
+          <span class="card-tag green" style="margin:0;">Prompt Eng.</span>
+          <span>Fev 2026</span>
+          <span>4 min</span>
+        </div>
+        <h3>Prompt engineering aplicado: como geramos análises críticas reproduzíveis</h3>
+        <p>Caso real de prompt estruturado para autorrevisão de artefatos de decisão. Inclui o prompt, a saída e o que mudou na análise depois.</p>
+      </a>
+
+      <!-- Artigo 5 -->
+      <a href="#autorevisao" id="autorevisao" class="insight-card fade-up">
+        <div class="insight-card-meta">
+          <span class="card-tag" style="margin:0;">Produto · Método</span>
+          <span>Jan 2026</span>
+          <span>5 min</span>
+        </div>
+        <h3>Autorrevisão como prática: critique seu próprio dashboard antes que o board faça</h3>
+        <p>Demonstra a análise crítica do Datacenter Conlog como método replicável. A checklist que uso antes de qualquer apresentação executiva.</p>
+      </a>
+
+      <!-- Em breve -->
+      <div class="insight-card fade-up" style="opacity:0.5;cursor:default;pointer-events:none;">
+        <div class="insight-card-meta">
+          <span class="card-tag" style="margin:0;background:rgba(255,255,255,0.04);">Em breve</span>
+        </div>
+        <h3>Próximo artigo em 2 semanas</h3>
+        <p>Cadência quinzenal — próximo insight publicado em maio 2026.</p>
+      </div>
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="card fade-up" style="margin-top:48px;background:linear-gradient(135deg,rgba(139,92,246,0.07),rgba(34,211,238,0.04));border-color:rgba(139,92,246,0.2);display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:36px;">
+      <div>
+        <div class="section-label" style="margin-bottom:10px;">Cadência quinzenal</div>
+        <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:8px;">Receba os próximos insights</h3>
+        <p style="color:var(--muted);font-size:0.875rem;margin:0;">Sem spam. Só o que vale o seu tempo — 1 artigo a cada 2 semanas.</p>
+      </div>
+      <a href="../contato.html" class="btn btn-primary" style="white-space:nowrap;">
+        Me avisem
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.82 19.79 19.79 0 01.1 4.18 2 2 0 012.08 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.18 6.18l1.48-1.32a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </a>
+    </div>
+
+    <style>
+    @media(max-width:600px){
+      .card[style*="grid-template-columns:1fr auto"]{grid-template-columns:1fr!important;}
+    }
+    </style>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="footer-logo">Breno Bernstein</a>
+      <ul class="footer-links">
+        <li><a href="../sobre.html">Sobre</a></li>
+        <li><a href="../cases/index.html">Cases</a></li>
+        <li><a href="index.html">Insights</a></li>
+        <li><a href="../contato.html">Contato</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 · Itajaí, SC</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/neural.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>new NeuralNetwork('neural-canvas');</script>
+</body>
+</html>
